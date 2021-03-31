@@ -1,5 +1,8 @@
 const config = require("../config/dev");
 const mongoose = require("mongoose");
+
+require("./models/portfolio");
+
 exports.connect = () => {
   return mongoose.connect(
     config.DB_URI,
@@ -13,7 +16,7 @@ exports.connect = () => {
       if (err) {
         console.error(err);
       } else {
-        console.log("connected to DB");
+        console.log("Connected to DB!");
       }
     }
   );
